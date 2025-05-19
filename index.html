@@ -8,28 +8,30 @@
 </head>
 <body>
   <div class="content-wrapper">
-
-    <!-- HEADER con logo a la izquierda -->
-    <header class="bg-white text-gray-800 py-4 flex justify-between items-center shadow-md sticky top-0 z-10 rounded-md">
-        <div class="logo flex items-center ml-4">
-          <!-- 🟠 Reemplazá "logo.png" con la imagen de tu logo local -->
-          <img src="img/logo.jpg" alt="Logo Appas" class="logo-img" />
-          <div class="text-xl font-bold ml-2">
-            <span class="text-blue-700">Ap</span><span class="logo-orange">p</span><span class="text-blue-700">as</span>
-            <span class="ml-1">Diseño y fabricación de Amoblamientos</span>
+    <header class="bg-white text-gray-800 py-4 px-4 shadow-md sticky top-0 z-10 rounded-md">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+        <!-- Logo + título -->
+        <div class="flex items-center">
+          <img src="img/logo.jpg" alt="Logo Appas" class="h-12 mr-2" />
+          <div class="text-xl font-bold">
+            <span class="text-blue-700">Ap</span><span class="text-orange-500">p</span><span class="text-blue-700">as</span>
+            <span class="block md:inline ml-1">Diseño y fabricación de Amoblamientos</span>
           </div>
         </div>
-        <nav>
-          <!-- Botón hamburguesa (solo visible en móviles) -->
-          <button class="menu-toggle" onclick="toggleMenu()">☰ Inicio</button>
     
-          <ul id="menu">
-            <li><a href="#inicio" class="hover:text-orange-600 no-underline">Inicio</a></li>
-            <li><a href="#productos" class="hover:text-orange-600 no-underline">Productos</a></li>
-            <li><a href="#pedidos" class="hover:text-orange-600 no-underline">Pedidos</a></li>
-            <li><a href="#contacto" class="hover:text-orange-600 no-underline">Contacto</a></li>
-          </ul>
-        </nav>
+        <!-- Botón hamburguesa en móvil -->
+        <button class="md:hidden mt-4 text-white bg-blue-600 px-4 py-2 rounded" onclick="toggleMenu()">
+          ☰ Inicio
+        </button>
+    
+        <!-- Menú de navegación -->
+        <ul id="menu" class="hidden md:flex flex-col md:flex-row mt-4 md:mt-0 md:space-x-6 text-blue-800 font-semibold">
+          <li><a href="#inicio" class="block py-1 hover:text-orange-600">Inicio</a></li>
+          <li><a href="#productos" class="block py-1 hover:text-orange-600">Productos</a></li>
+          <li><a href="#pedidos" class="block py-1 hover:text-orange-600">Pedidos</a></li>
+          <li><a href="#contacto" class="block py-1 hover:text-orange-600">Contacto</a></li>
+        </ul>
+      </div>
     </header>
 
     <header id="inicio">

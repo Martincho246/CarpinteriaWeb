@@ -16,6 +16,7 @@ document.getElementById('formularioPedido').addEventListener('submit', function 
     window.open(url, '_blank');
   });
   function toggleMenu() {
-    document.getElementById('menu').classList.toggle('open');
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("hidden");
   }
   
