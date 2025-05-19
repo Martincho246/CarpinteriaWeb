@@ -1,0 +1,298 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER con logo a la izquierda y navegación a la derecha */
+header.bg-white {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos a los extremos */
+    align-items: center;
+    padding: 1rem; /* Ajusta el padding si es necesario */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-radius: 0.5rem;
+}
+
+header.bg-white .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+header.bg-white .logo-img {
+    height: 60px; /* Tamaño del logo */
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+header.bg-white .logo .text-xl {
+    font-size: 1.25rem; /* Ajusta el tamaño del texto del logo */
+    font-weight: bold;
+}
+
+header.bg-white nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 1rem; /* Mueve la navegación más a la derecha */
+}
+
+header.bg-white nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+header.bg-white nav ul li a:hover {
+    color: #ea580c; /* Color naranja al pasar el mouse */
+}
+
+/* PRODUCTOS */
+#productos {
+    padding: 5rem 1rem; /* Ajusta el padding de la sección */
+    text-align: center;
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+}
+
+#productos h2 {
+    font-size: 2.25rem; /* Tamaño del título de productos */
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #1d4ed8;
+}
+
+#product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Dos columnas en pantallas más grandes */
+    gap: 2rem; /* Espacio entre los productos */
+    max-width: 1000px; /* Ancho máximo del contenedor de productos */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+.producto {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra más pronunciada */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.producto img {
+    width: 100%;
+    max-width: 250px; /* Ancho máximo de la imagen del producto */
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+    object-fit: cover; /* Asegura que la imagen se ajuste bien */
+}
+
+.producto h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.producto p {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+}
+
+/* FORMULARIO DE PEDIDO */
+#pedidos {
+    padding: 5rem 1rem;
+    background-color: #e2e8f0; /* Un color de fondo diferente para esta sección */
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+#pedidos h2 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #1d4ed8;
+}
+
+#formularioPedido {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#formularioPedido label {
+    font-weight: 500;
+    color: #333;
+    text-align: left;
+}
+
+#formularioPedido input,
+#formularioPedido select {
+    padding: 0.75rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+}
+
+#formularioPedido button {
+    background-color: #2563eb;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#formularioPedido button:hover {
+    background-color: #1e40af;
+}
+
+/* CONTACTO */
+#contacto {
+    padding: 5rem 1rem;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+}
+
+#contacto h2 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #1d4ed8;
+}
+
+#contacto p {
+    font-size: 1.125rem;
+    color: #4a5568;
+    margin-bottom: 0.75rem;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #333;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+}
+
+/* UTILIDADES (Asegúrate de que estas clases estén definidas correctamente si usas Tailwind u otro framework) */
+.text-blue-700 {
+    color: #1e40af;
+}
+
+.logo-orange {
+    color: #ea580c;
+}
+.bg-gray-50 {
+    background-color: #f9fafb;
+}
+.bg-orange-500 {
+    background-color: #f97316;
+}
+.text-orange-600{
+    color: #dc2626; /* Ajustado para ser más visible si el hover es sobre blanco */
+}
+.text-orange-100{
+    color: #fde68a;
+}
+.text-blue-700 {
+    color: #1d4ed8;
+}
+
+/* INICIO CON IMAGEN DE FONDO */
+#inicio {
+    background: url('img/fondo.jpeg') no-repeat center center/cover;
+    height: 300px; /* Ajustá según prefieras */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .overlay h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .redes-sociales {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.red-link {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.red-link:hover {
+  color: #1d4ed8;
+}
+
+.icono-red {
+  width: 40px;
+  height: 40px;
+}
+
+.mapa {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.link-mapa {
+  color: #2563eb;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.link-mapa:hover {
+  text-decoration: underline;
+}
+
+  

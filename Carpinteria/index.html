@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AppasAmoblamientos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="content-wrapper">
+
+    <!-- HEADER con logo a la izquierda -->
+    <header class="bg-white text-gray-800 py-4 flex justify-between items-center shadow-md sticky top-0 z-10 rounded-md">
+        <div class="logo flex items-center ml-4">
+          <!-- 🟠 Reemplazá "logo.png" con la imagen de tu logo local -->
+          <img src="img/logo.jpg" alt="Logo Appas" class="logo-img" />
+          <div class="text-xl font-bold ml-2">
+            <span class="text-blue-700">Ap</span><span class="logo-orange">p</span><span class="text-blue-700">as</span>
+            <span class="ml-1">Diseño y fabricación de Amoblamientos</span>
+          </div>
+        </div>
+        <nav class="mr-4">
+            <ul class="flex space-x-4">
+                <li><a href="#inicio" class="hover:text-orange-600 no-underline">Inicio</a></li>
+                <li><a href="#productos" class="hover:text-orange-600 no-underline">Productos</a></li>
+                <li><a href="#pedidos" class="hover:text-orange-600 no-underline">Pedidos</a></li>
+                <li><a href="#contacto" class="hover:text-orange-600 no-underline">Contacto</a></li>
+            </ul>
+        </nav>
+        </header>
+    </header>
+
+    <header id="inicio">
+      <div class="overlay">
+        <!-- 👉 Podés dejar esto como fondo con el logo grande si querés -->
+        <h1>Diseño & Amoblamientos</h1>
+      </div>
+    </header>
+
+    <!-- PRODUCTOS CON IMÁGENES DESCARGADAS -->
+    <section id="productos" class="py-20 px-4 text-center rounded-md">
+      <h2 class="text-3xl font-semibold mb-8 text-blue-700">Nuestros Productos</h2>
+      <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        
+        <!-- 👉 Agregá tus imágenes dentro de la carpeta /img y usalas así: -->
+        <div class="producto">
+          <img src="img/imagen1.jpg" alt="mueble 1" style="width:100%; border-radius: 8px;" />
+          <h3>Mesada de cocina</h3>
+          <p>Mesada de cocina, de pino compensado.</p>
+        </div>
+
+        <div class="producto">
+          <img src="img/imagen2.jpg" alt="Bahiut 1" style="width:100%; border-radius: 8px;" />
+          <h3>Esquinero</h3>
+          <p>Esquinero de Pino.</p>
+        </div>
+
+        <div class="producto">
+          <img src="img/imagen3.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
+          <h3>Isla de cocina</h3>
+          <p>Isla de cocina elegante.</p>
+        </div>
+
+        <div class="producto">
+            <img src="img/imagen4.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
+            <h3>Mesa de cocina grande</h3>
+            <p>Mesa de cocina grande.</p>
+          </div>
+
+          <div class="producto">
+            <img src="img/imagen5.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
+            <h3>Placard</h3>
+            <p>Placard grande con mucho almacenamiento</p>
+          </div>
+
+          <div class="producto">
+            <img src="img/imagen6.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
+            <h3>Mesa de cocina ya colocada</h3>
+            <p>descripcion</p>
+          </div>
+
+          <div class="producto">
+            <img src="img/imagen7.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
+            <h3>Mueble chico</h3>
+            <p>descripcion</p>
+          </div>
+
+          <div class="producto">
+            <img src="img/imagen8.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
+            <h3>Banquitos y Isla</h3>
+            <p>descripcion</p>
+          </div>
+
+          <div class="producto">
+            <img src="img/imagen9.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
+            <h3>Placard grande para habitacion</h3>
+            <p>descripcion</p>
+          </div>
+
+          <div class="producto">
+            <img src="img/imagen10.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
+            <h3>Mesa de comedor grande para 8 personas</h3>
+            <p>descripcion</p>
+          </div>
+
+        <!-- 👉 Copiá este bloque y cambiá src + texto para más productos -->
+
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE PEDIDO -->
+    <section id="pedidos">
+      <h2>Solicitar Pedido</h2>
+      <form id="formularioPedido">
+        <label for="tipoMadera">Tipo de Madera:</label>
+        <select id="tipoMadera" required>
+          <option value="Pino">Pino</option>
+          <option value="Roble">Roble</option>
+          <option value="Cedro">Cedro</option>
+          <option value="Otro">Otro</option>
+        </select>
+
+        <label for="otroTipoMadera">Indique qué otro:</label>
+        <input type="text" id="otroTipoMadera" placeholder="Ej: Algarrobo" />
+
+        <button type="submit">Enviar a WhatsApp</button>
+      </form>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-20 px-4 text-center rounded-md">
+      <h2 class="text-3xl font-semibold mb-8 text-blue-700">Contacto</h2>
+      <p class="text-lg text-gray-700 mb-4">¡Contactanos y diseñemos juntos el mueble de tus sueños!</p>
+      <p class="text-lg text-gray-700">Email: omarappas@hotmail.com</p>
+      <p class="text-lg text-gray-700">Teléfono: 3492327644</p>
+      <p class="text-lg text-gray-700">Localidad: Rafaela - Santa Fe - Argentina</p>
+      <p class="text-lg text-gray-700">Direccion: Bv. Lehmann 2606, esquina J. Peterlin</p>
+    </section>
+
+    <!-- Redes sociales -->
+    <div class="redes-sociales">
+    <!-- 🔵 Reemplazá "tu_usuario" con tu usuario real de Instagram -->
+    <a href="https://www.instagram.com/appas.amoblamientos" target="_blank" class="red-link">
+      <img src="img/Fondo de instagram eliminado.png" alt="Instagram" class="icono-red" />
+      <span>@appas.amoblamientos</span> <!-- ⬅️ Acá también poné tu usuario de Instagram -->
+    </a>
+  
+    <!-- 🔵 Reemplazá "tu_pagina" con tu página de Facebook -->
+    <a href="https://www.facebook.com/AppasCarpinteria" target="_blank" class="red-link">
+      <img src="img/Fondo de facebook eliminado.png" alt="Facebook" class="icono-red" />
+      <span>/AppasCarpinteria</span> <!-- ⬅️ Acá también poné tu página de Facebook -->
+    </a>
+  
+    <!-- 🔵 Reemplazá "tu+carpinteria" con el nombre de tu negocio en Google -->
+    <a href="https://www.google.com/search?q=Appas Amoblamientos" target="_blank" class="red-link">
+      <img src="img/Fondo de google eliminado.png" alt="Google" class="icono-red" />
+      <span>Appas Amoblamientos</span> <!-- ⬅️ Poné acá el nombre exacto como figura en Google -->
+    </a>
+  </div>
+  
+  <!-- Google Maps -->
+  <div class="mapa">
+    <!-- 🔵 Reemplazá "Tu+Dirección" con la dirección de tu local (con "+" en lugar de espacios) -->
+    <a href="https://www.google.com/maps/place/Blvd.+G.+Lehmann+2606,+S2300+Rafaela,+Santa+Fe" target="_blank" class="link-mapa">
+      Ver ubicación en Google Maps <!-- ⬅️ Este texto lo podés cambiar también si querés -->
+    </a>
+  </div>
+  
+
+    <footer>
+      <p>&copy; 2025 AppasAmoblamientos - Todos los derechos reservados</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
