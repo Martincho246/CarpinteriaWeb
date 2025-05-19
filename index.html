@@ -20,15 +20,13 @@
           </div>
         </div>
     <!-- Botón hamburguesa visible en móvil -->
-    <nav>
-      <button class="menu-toggle" onclick="document.querySelector('header nav ul').classList.toggle('open')">☰ Inicio</button>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#pedidos">Pedidos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
+    <button class="menu-toggle" onclick="document.querySelector('header nav ul').classList.toggle('open')">☰ Inicio</button>
+    <ul>
+        <li><a href="#inicio" class="hover:text-orange-600 no-underline">Inicio</a></li>
+        <li><a href="#productos" class="hover:text-orange-600 no-underline">Productos</a></li>
+        <li><a href="#pedidos" class="hover:text-orange-600 no-underline">Pedidos</a></li>
+        <li><a href="#contacto" class="hover:text-orange-600 no-underline">Contacto</a></li>
+    </ul>
     </header>
 
     <header id="inicio">
