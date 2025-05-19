@@ -308,29 +308,25 @@ footer {
 
 /* MODO RESPONSIVE */
 @media (max-width: 768px) {
-    .overlay h1 {
-        font-size: 2.25rem;
-    }
-
-    header.bg-white {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    /* Mostrar el botón hamburguesa */
     .menu-toggle {
         display: block;
-        align-self: flex-end;
     }
 
-    /* Ocultar menú por defecto */
-    header.bg-white nav ul {
+    header nav ul {
         display: none;
-        width: 100%;
         flex-direction: column;
         background-color: white;
-        border-radius: 0.5rem;
-        padding: 0.5rem 0;
+        padding: 0.5rem;
+        gap: 1rem; /* Espaciado entre ítems */
+    }
+
+    header nav ul.open {
+        display: flex;
+    }
+
+    header nav ul li a {
+        padding: 1rem;
+        display: block;
     }
 
     /* Mostrar menú al abrir */
