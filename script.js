@@ -15,4 +15,7 @@ document.getElementById('formularioPedido').addEventListener('submit', function 
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
   });
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('open');
+  }
   

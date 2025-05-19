@@ -295,7 +295,28 @@ footer {
   text-decoration: underline;
 }
 
-/* Botón menú hamburguesa */
+/* Estilos generales */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Botón hamburguesa oculto por defecto */
 .menu-toggle {
   display: none;
   background-color: #2563eb;
@@ -306,42 +327,15 @@ footer {
   font-weight: bold;
   border-radius: 0.375rem;
   cursor: pointer;
-  margin: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Estilo cuando el menú está oculto */
-header.bg-white nav ul {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* En celular: ocultar el menú por defecto */
+/* Modo celular */
 @media (max-width: 768px) {
-  .menu-toggle {
-      display: block;
+  nav {
+    align-items: stretch;
   }
 
-  header.bg-white nav ul {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      margin-top: 0.5rem;
-  }
-
-  header.bg-white nav ul.open {
-      display: flex;
-  }
-
-  header.bg-white nav ul li a {
-      padding: 0.75rem 1rem;
-      background-color: white;
-      border-bottom: 1px solid #ddd;
-      width: 100%;
-  }
-}
-
-/* En pantallas pequeñas (celular) */
-@media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
@@ -350,7 +344,6 @@ header.bg-white nav ul {
     display: none;
     flex-direction: column;
     width: 100%;
-    margin-top: 0.5rem;
   }
 
   nav ul.open {
@@ -362,5 +355,23 @@ header.bg-white nav ul {
     background-color: white;
     border-bottom: 1px solid #ddd;
     width: 100%;
+  }
+}
+
+/* Modo escritorio */
+@media (min-width: 769px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex !important;
+    flex-direction: row;
+  }
+
+  .menu-toggle {
+    display: none;
   }
 }
