@@ -295,83 +295,85 @@ footer {
   text-decoration: underline;
 }
 
-/* Estilos generales */
-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 1rem;
+/* Estilos para el botón de hamburguesa y el menú móvil */
+.menu-toggle {
+  display: none; /* Oculto por defecto en pantallas grandes */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333; /* Color del ícono */
 }
 
-nav ul {
-  display: flex;
-  gap: 1rem;
+#menu {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex; /* Menú horizontal por defecto */
 }
 
-nav ul li a {
+#menu li {
+  margin-left: 1rem;
+}
+
+#menu a {
   text-decoration: none;
-  font-weight: bold;
-}
-
-/* Botón hamburguesa oculto por defecto */
-.menu-toggle {
-  display: none;
-  background-color: #2563eb;
-  color: white;
+  color: #333;
   padding: 0.5rem 1rem;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 0.375rem;
-  cursor: pointer;
-  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
 }
 
-/* Modo celular */
-@media (max-width: 768px) {
-  nav {
-    align-items: stretch;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  nav ul.open {
-    display: flex;
-  }
-
-  nav ul li a {
-    padding: 0.75rem 1rem;
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-    width: 100%;
-  }
+#menu a:hover {
+  color: #ea580c;
 }
 
-/* Modo escritorio */
-@media (min-width: 769px) {
-  nav {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
 
-  nav ul {
-    display: flex !important;
-    flex-direction: row;
-  }
-
+/* Media Query para pantallas pequeñas (celulares) */
+@media (max-width: 768px) { /* Ajusta el breakpoint según necesites */
   .menu-toggle {
-    display: none;
+      display: block; /* Muestra el botón de hamburguesa en celulares */
+  }
+
+  #menu {
+      display: none; /* Oculta el menú por defecto en celulares */
+      flex-direction: column;
+      width: 100%;
+      background-color: white; /* Color de fondo para el menú móvil */
+      position: absolute;
+      top: 90px; /* Ajusta según la altura de tu encabezado */
+      left: 0;
+      z-index: 9; /* Asegura que el menú esté por encima de otros elementos, pero debajo del header */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  #menu.open {
+      display: flex; /* Muestra el menú cuando tiene la clase 'open' */
+  }
+
+  #menu li {
+      text-align: center;
+      padding: 10px 0;
+      margin-left: 0;
+      border-bottom: 1px solid #eee;
+  }
+
+  #menu li:last-child {
+      border-bottom: none;
+  }
+
+  #menu a {
+       padding: 10px 1rem; /* Ajusta el padding para mejor área de clic */
+  }
+
+   header.bg-white {
+      padding: 0.5rem 1rem; /* Ajusta el padding del header en móviles */
+  }
+
+  header.bg-white .logo-img {
+       height: 50px; /* Ajusta el tamaño del logo en móviles */
+  }
+
+   header.bg-white .logo .text-xl {
+      font-size: 1rem; /* Ajusta el tamaño del texto del logo en móviles */
   }
 }

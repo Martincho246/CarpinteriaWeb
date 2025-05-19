@@ -1,3 +1,24 @@
+// Función para alternar la visibilidad del menú en móviles
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  if (menu) {
+    menu.classList.toggle('open');
+  } else {
+    console.error("Elemento con ID 'menu' no encontrado.");
+  }
+}
+
+// Opcional: Cerrar el menú al hacer clic en un enlace (útil en móviles)
+const navLinks = document.querySelectorAll('#menu a');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        const menu = document.getElementById('menu');
+        if (menu && menu.classList.contains('open')) {
+            menu.classList.remove('open');
+        }
+    });
+});
 document.getElementById('formularioPedido').addEventListener('submit', function (e) {
     e.preventDefault();
   
