@@ -311,27 +311,33 @@ footer {
   }
 
   /* Mostrar el menú verticalmente cuando se abra */
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin-top: 1rem;
-  }
+  /* Menú desplegable en móvil */
+nav ul {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%; /* Justo debajo del header */
+  right: 1rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 20;
+  min-width: 150px;
+}
 
-  nav ul.open {
-    display: flex;
-    gap: 1rem;
-  }
+nav ul.open {
+  display: flex;
+}
 
-  nav ul li {
-    margin-bottom: 0.5rem;
-  }
+nav ul li {
+  margin-bottom: 1rem;
+}
 
-  nav ul li:last-child {
-    margin-bottom: 0;
-  }
+nav ul li:last-child {
+  margin-bottom: 0;
+}
+
 
   .icono-red {
     width: 40px;
