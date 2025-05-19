@@ -295,24 +295,49 @@ footer {
   text-decoration: underline;
 }
 
+/* Estilos generales */
 nav {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
 }
 
-/* Versión móvil */
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Botón hamburguesa oculto por defecto */
+.menu-toggle {
+  display: none;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+/* Modo celular */
 @media (max-width: 768px) {
   nav {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .menu-toggle {
     display: block;
-    margin-top: 1rem;
-    align-self: stretch;
   }
 
   nav ul {
@@ -333,20 +358,20 @@ nav {
   }
 }
 
-/* Escritorio */
+/* Modo escritorio */
 @media (min-width: 769px) {
   nav {
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-  }
-
-  .menu-toggle {
-    display: none;
   }
 
   nav ul {
     display: flex !important;
     flex-direction: row;
-    gap: 1rem;
+  }
+
+  .menu-toggle {
+    display: none;
   }
 }
