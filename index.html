@@ -113,7 +113,7 @@
       <h2>Solicitar Pedido</h2>
       <form id="formularioPedido">
         <label for="tipoMadera">Tipo de Madera:</label>
-        <select id="tipoMadera" required>
+        <select id="tipoMadera" name="tipoMadera" required>
           <option value="Pino">Pino</option>
           <option value="Roble">Roble</option>
           <option value="Cedro">Cedro</option>
@@ -121,7 +121,7 @@
         </select>
 
         <label for="otroTipoMadera">Indique qué otro:</label>
-        <input type="text" id="otroTipoMadera" placeholder="Ej: Algarrobo" />
+        <input type="text" id="otroTipoMadera" name="otroTipoMadera" placeholder="Ej: Algarrobo" />
 
         <button type="submit">Enviar a WhatsApp</button>
       </form>
