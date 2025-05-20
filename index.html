@@ -17,7 +17,7 @@
           <img src="img/logo.jpg" alt="Logo Appas" class="logo-img" />
           <div class="text-xl font-bold ml-2">
             <span class="text-blue-700">Ap</span><span class="logo-orange">p</span><span class="text-blue-700">as</span>
-            <span class="ml-1">Diseño y fabricación de Amoblamientos</span>
+            <span class="ml-1">Diseño y Fabricación de Amoblamientos</span>
           </div>
         </div>
         <nav>
@@ -115,15 +115,34 @@
       <h2>Solicitar Pedido</h2>
       <form id="formularioPedido">
         <label for="tipoMadera">Tipo de Madera:</label>
-        <select id="tipoMadera" name="tipoMadera" required>
-          <option value="Pino">Pino</option>
-          <option value="Roble">Roble</option>
-          <option value="Cedro">Cedro</option>
+        <select id="tipoMadera" required>
+          <option value="Melamina">Melamina</option>
+          <option value="MaderaMaciza">Madera Maciza</option>
+          <option value="MaderaComprensada">Madera Comprensada</option>
           <option value="Otro">Otro</option>
         </select>
 
-        <label for="otroTipoMadera">Indique qué otro:</label>
-        <input type="text" id="otroTipoMadera" name="otroTipoMadera" placeholder="Ej: Algarrobo" />
+        <div id="otroTipoMaderaContainer" style="display: none;">
+          <label for="otroTipoMadera">Indique qué otro:</label>
+          <input type="text" id="otroTipoMadera" name="otroTipoMadera" placeholder="Ej: Roble" />
+        </div>
+
+          <label for="tipoSector">Sector donde va a ir ubicado:</label>
+          <select id="tipoSector" required>
+            <option value="Dormitorio">Dormitorio</option>
+            <option value="Cocina">Cocina</option>
+            <option value="Lavadero">Lavadero</option>
+            <option value="Baño">Baño</option>
+            <option value="Oficina">Oficina</option>
+            <option value="Comedor/Living">Comedor/Living</option>
+            <option value="Comercio">Comercio</option>
+            <option value="Otro">Otro</option>
+          </select>
+  
+          <div id="otroSectorContainer" style="display: none;">
+            <label for="otroSector">Indique qué otro:</label>
+            <input type="text" id="otroSector" name="otroSector" placeholder="Ej: Garage" />
+          </div>
 
         <button type="submit">Enviar a WhatsApp</button>
       </form>
