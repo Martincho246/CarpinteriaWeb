@@ -256,6 +256,11 @@ footer {
     margin: 0;
     line-height: 1.2;
   }
+  /* Seguridad extra global */
+    body {
+    margin: 0;
+    overflow-x: hidden;  /* 👈 evita scroll horizontal */
+  }
 
   .redes-sociales {
   display: flex;
@@ -264,6 +269,20 @@ footer {
   margin-top: 2rem;
   flex-wrap: wrap;
 }
+
+@media (max-width: 600px) {
+    .overlay {
+      border-radius: 16px;
+      padding: 15px 20px;
+      align-items: flex-start;
+      text-align: left;
+      max-width: 95vw;
+    }
+  
+    .overlay h1 {
+      font-size: 2rem;
+    }
+  }
 
 .red-link {
   text-decoration: none;
