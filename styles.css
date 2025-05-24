@@ -397,19 +397,21 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Capa oscura para destacar el texto */
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
   }
   
   #descripcion .contenido {
     z-index: 1;
     max-width: 800px;
-    padding: 40px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente detrás del texto */
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    padding: 40px;
   }
   
   #descripcion h2 {
@@ -421,4 +423,24 @@ footer {
     font-size: 1.2rem;
     margin-bottom: 15px;
     line-height: 1.6;
+  }
+  
+  /* Estilos responsive */
+  @media (max-width: 768px) {
+    #descripcion {
+      height: auto;
+      padding: 40px 20px;
+    }
+  
+    #descripcion .contenido {
+      padding: 25px 20px;
+    }
+  
+    #descripcion h2 {
+      font-size: 1.5rem;
+    }
+  
+    #descripcion p {
+      font-size: 1rem;
+    }
   }
