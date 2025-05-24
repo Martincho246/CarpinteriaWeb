@@ -256,11 +256,6 @@ footer {
     margin: 0;
     line-height: 1.2;
   }
-  /* Seguridad extra global */
-    body {
-    margin: 0;
-    overflow-x: hidden;  /* 👈 evita scroll horizontal */
-  }
 
   .redes-sociales {
   display: flex;
