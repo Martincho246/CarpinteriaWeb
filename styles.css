@@ -243,8 +243,10 @@ footer {
   .overlay {
     background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
     padding: 20px 30px;
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
+    max-width: 90vw;
+    box-sizing: border-box;
   }
   
   .overlay h1 {
