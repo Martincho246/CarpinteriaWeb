@@ -1,441 +1,375 @@
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif; /* Considera 'Montserrat', 'Roboto', 'Lato' de Google Fonts */
+  background-color: #f0f2f5; /* Un gris más claro para el fondo general */
+  color: #333;
+  overflow-x: hidden; /* Evita el scroll horizontal */
 }
 
 .content-wrapper {
-    max-width: 1600px;
-    margin: auto;
+  max-width: 1600px;
+  margin: 0 auto; /* Centra el wrapper */
+  padding: 0 1rem; /* Pequeño padding a los lados para respiro */
 }
 
-/* HEADER con logo a la izquierda y navegación a la derecha */
+/* HEADER - Asegúrate de que las clases Tailwind cubran esto, si no, personaliza aquí */
 header.bg-white {
-    display: flex;
-    justify-content: space-between; /* Alinea los elementos a los extremos */
-    align-items: center;
-    padding: 1rem; /* Ajusta el padding si es necesario */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    background-color: white;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    border-radius: 0.5rem;
-}
-
-header.bg-white .logo {
-    display: flex;
-    align-items: center;
-    margin-left: 1rem;
+  /* Tailwind: bg-white py-4 flex justify-between items-center shadow-md sticky top-0 z-10 rounded-md px-4 */
+  /* Personalizado para asegurar que se vea bien */
+  padding-left: 1.5rem; /* Más espacio a la izquierda */
+  padding-right: 1.5rem; /* Más espacio a la derecha */
 }
 
 header.bg-white .logo-img {
-    height: 60px; /* Tamaño del logo */
-    width: auto;
-    margin-right: 0.5rem;
+  height: 64px; /* Un poco más grande para el logo */
+  width: auto;
+  object-fit: contain; /* Asegura que el logo se vea completo */
 }
 
-header.bg-white .logo .text-xl {
-    font-size: 1.25rem; /* Ajusta el tamaño del texto del logo */
-    font-weight: bold;
+/* Ajustes para el texto del logo (si no usas Tailwind directamente en el HTML) */
+.logo .text-3xl { /* Esta clase viene de Tailwind */
+  font-size: 2.25rem; /* text-3xl */
+  font-weight: 800; /* font-extrabold */
+  line-height: 1;
 }
 
-header.bg-white nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    margin-right: 1rem; /* Mueve la navegación más a la derecha */
+.logo-orange {
+  color: #ea580c; /* Naranja original */
 }
 
-header.bg-white nav ul li a {
-    text-decoration: none;
-    color: #333;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
-}
-
-header.bg-white nav ul li a:hover {
-    color: #ea580c; /* Color naranja al pasar el mouse */
+/* NAVEGACIÓN - Para el menú de escritorio */
+#menu li a {
+  /* Tailwind: hover:text-orange-600 text-lg font-medium */
+  padding: 0.75rem 1.25rem; /* Más espacio en los links */
+  display: block; /* Para que todo el padding sea clickable */
 }
 
 /* PRODUCTOS */
 #productos {
-    padding: 5rem 1rem; /* Ajusta el padding de la sección */
-    text-align: center;
-    background-color: #f5f5f5;
-    border-radius: 0.5rem;
+  /* Tailwind: py-20 px-4 text-center bg-white rounded-md */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #ffffff; /* Blanco puro para la sección de productos */
+  border-radius: 0.75rem; /* Bordes más redondeados */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* Sombra suave para la sección */
 }
 
 #productos h2 {
-    font-size: 2.25rem; /* Tamaño del título de productos */
-    font-weight: 600;
-    margin-bottom: 2rem;
-    color: #1d4ed8;
+  /* Tailwind: text-4xl font-bold text-gray-800 mb-12 */
+  margin-bottom: 3rem; /* Más espacio después del título */
 }
 
 #product-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Dos columnas en pantallas más grandes */
-    gap: 2rem; /* Espacio entre los productos */
-    max-width: 1200px; /* Ancho máximo del contenedor de productos */
-    margin: 0 auto; /* Centra el contenedor */
+  /* Tailwind: grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto */
+  gap: 2.5rem; /* Espacio un poco mayor entre las tarjetas */
 }
 
 .producto {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra más pronunciada */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  /* Tailwind: bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra más agradable */
+  border: 1px solid #e0e0e0; /* Borde sutil */
+  text-align: left; /* Alinear texto a la izquierda dentro de la tarjeta */
 }
 
 .producto img {
-    width: 100%;
-    max-width: 450px; /* Ancho máximo de la imagen del producto */
-    height: auto;
-    border-radius: 0.5rem;
-    margin-bottom: 0.75rem;
-    object-fit: cover; /* Asegura que la imagen se ajuste bien */
+  /* Tailwind: w-full h-64 object-cover */
+  height: 256px; /* Asegura que la altura sea consistente */
+  border-bottom: 1px solid #eee; /* Línea sutil debajo de la imagen */
+}
+
+.producto .p-6 {
+  padding: 1.5rem; /* Más padding interno */
 }
 
 .producto h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #333;
+  /* Tailwind: text-xl font-semibold text-gray-800 mb-2 */
+  font-size: 1.35rem; /* Un poco más grande */
+  margin-bottom: 0.75rem; /* Más espacio */
+  color: #2d3748; /* Un gris más oscuro */
 }
 
 .producto p {
-    font-size: 0.9rem;
-    color: #666;
-    text-align: center;
+  /* Tailwind: text-gray-600 text-sm */
+  font-size: 0.95rem; /* Ligeramente más grande */
+  color: #555;
+  line-height: 1.5;
 }
 
 /* FORMULARIO DE PEDIDO */
 #pedidos {
-    padding: 5rem 1rem;
-    background-color: #e2e8f0; /* Un color de fondo diferente para esta sección */
-    border-radius: 0.5rem;
-    text-align: center;
+  /* Tailwind: py-20 px-4 bg-gray-100 text-center */
+  background-color: #f7f9fb; /* Fondo muy claro, casi blanco */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 #pedidos h2 {
-    font-size: 2.25rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    color: #1d4ed8;
+  /* Tailwind: text-4xl font-bold text-gray-800 mb-12 */
+  margin-bottom: 3rem;
 }
 
 #formularioPedido {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 1.5rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  /* Tailwind: max-w-xl mx-auto p-8 bg-white rounded-lg shadow-xl */
+  padding: 2.5rem; /* Más padding */
+  border-radius: 1rem; /* Bordes más redondeados */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra más pronunciada */
 }
 
 #formularioPedido label {
-    font-weight: 500;
-    color: #333;
-    text-align: left;
+  /* Tailwind: block text-gray-700 text-lg font-medium mb-2 */
+  font-size: 1.15rem; /* Más grande */
+  margin-bottom: 0.6rem;
 }
 
 #formularioPedido input,
 #formularioPedido select {
-    padding: 0.75rem;
-    border: 1px solid #cbd5e0;
-    border-radius: 0.375rem;
-    font-size: 1rem;
+  /* Tailwind: w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg */
+  padding: 0.9rem 1.2rem; /* Más padding */
+  border-radius: 0.5rem; /* Bordes más redondeados */
+  border-color: #cdd4e0; /* Un gris más específico */
 }
 
 #formularioPedido button {
-    background-color: #2563eb;
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 0.375rem;
-    font-size: 1.125rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#formularioPedido button:hover {
-    background-color: #1e40af;
+  /* Tailwind: w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full text-xl transition duration-300 ease-in-out flex items-center justify-center */
+  padding: 1rem 1.5rem;
+  border-radius: 9999px; /* rounded-full */
+  font-size: 1.25rem;
+  display: inline-flex; /* Para el icono y el texto juntos */
 }
 
 /* CONTACTO */
 #contacto {
-    padding: 5rem 1rem;
-    text-align: center;
-    background-color: #f5f5f5;
-    border-radius: 0.5rem;
+  /* Tailwind: py-20 px-4 text-center bg-white rounded-md */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 #contacto h2 {
-    font-size: 2.25rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    color: #1d4ed8;
+  /* Tailwind: text-4xl font-bold text-gray-800 mb-12 */
+  margin-bottom: 3rem;
 }
 
 #contacto p {
-    font-size: 1.125rem;
-    color: #4a5568;
-    margin-bottom: 0.75rem;
+  /* Tailwind: text-xl text-gray-700 mb-8 */
+  font-size: 1.25rem;
+  color: #4a5568;
+  line-height: 1.6;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #333;
-    color: white;
-    font-size: 0.9rem;
-    margin-top: 2rem;
-    border-radius: 0.5rem;
-}
-
-/* UTILIDADES (Asegúrate de que estas clases estén definidas correctamente si usas Tailwind u otro framework) */
-.text-blue-700 {
-    color: #1e40af;
-}
-
-.logo-orange {
-    color: #ea580c;
-}
-.bg-gray-50 {
-    background-color: #f9fafb;
-}
-.bg-orange-500 {
-    background-color: #f97316;
-}
-.text-orange-600{
-    color: #dc2626; /* Ajustado para ser más visible si el hover es sobre blanco */
-}
-.text-orange-100{
-    color: #fde68a;
-}
-.text-blue-700 {
-    color: #1d4ed8;
-}
-
-/* INICIO CON IMAGEN DE FONDO */
-#inicio {
-    background: url('img/fondo.jpeg') no-repeat center center/cover;
-    height: 300px; /* Ajustá según prefieras */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    position: relative;
-    margin-bottom: 50px;
-    overflow: hidden;
-  }
-  
-  .overlay {
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
-    padding: 20px 30px;
-    border-radius: 12px;
-    text-align: center;
-    max-width: 90vw;
-    box-sizing: border-box;
-  }
-  
-  .overlay h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 0;
-    line-height: 1.2;
-  }
-  /* Seguridad extra global */
-    body {
-    margin: 0;
-    overflow-x: hidden;  /* 👈 evita scroll horizontal */
-  }
-
-  .redes-sociales {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-@media (max-width: 600px) {
-  .overlay {
-    border-radius: 16px;
-    padding: 15px 20px;
-    align-items: flex-start;
-    text-align: left;
-    max-width: 95vw;
-  }
-
-  .overlay h1 {
-    font-size: 2rem;
-  }
-}
-.red-link {
-  text-decoration: none;
-  color: #333;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+/* Redes Sociales y Mapa */
+.red-link span {
   font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-.red-link:hover {
-  color: #1d4ed8;
+  font-weight: 500;
 }
 
 .icono-red {
-  width: 40px;
-  height: 40px;
+  width: 48px; /* Íconos un poco más grandes */
+  height: 48px;
 }
 
 .mapa {
-  text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 4rem; /* Más espacio antes del mapa */
+}
+
+.mapa h3 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem; /* Un título más grande para el mapa */
 }
 
 .link-mapa {
-  color: #2563eb;
-  font-weight: bold;
+  /* Esta clase ya no se usaría si incrustas el iframe directamente */
+  /* Deberías eliminar el <a> del HTML si usas el iframe. */
+  /* Si lo mantienes como link, quizás hacerlo un botón: */
+  display: inline-block;
+  background-color: #1e40af; /* Azul oscuro */
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
   text-decoration: none;
-  font-size: 2rem;
 }
-
 .link-mapa:hover {
-  text-decoration: underline;
-}
-
-/* Estilos para el botón de hamburguesa y el menú móvil */
-.menu-toggle {
-  display: none; /* Oculto por defecto en pantallas grandes */
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #333; /* Color del ícono */
-}
-
-#menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex; /* Menú horizontal por defecto */
-}
-
-#menu li {
-  margin-left: 1rem;
-}
-
-#menu a {
+  background-color: #1a365d;
   text-decoration: none;
-  color: #333;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
-}
-
-#menu a:hover {
-  color: #ea580c;
 }
 
 
-/* Media Query para pantallas pequeñas (celulares) */
-@media (max-width: 768px) { /* Ajusta el breakpoint según necesites */
+/* FOOTER */
+footer {
+  /* Tailwind: text-center py-6 bg-gray-800 text-gray-300 text-sm mt-12 rounded-md */
+  padding: 2rem; /* Más padding en el footer */
+  font-size: 1rem;
+  color: #b0b0b0; /* Un gris más claro */
+  background-color: #2c3e50; /* Un gris-azulado oscuro */
+}
+
+
+/* INICIO (Hero Section) */
+#inicio {
+  /* Tailwind: relative h-screen bg-cover bg-center flex items-center justify-center text-white */
+  height: 90vh; /* Usa 90% del viewport height para que el footer no quede tan lejos */
+  min-height: 500px; /* Altura mínima para asegurar visibilidad en pantallas pequeñas */
+  background-attachment: fixed; /* Efecto parallax */
+}
+
+#inicio .overlay {
+  /* Tailwind: absolute inset-0 bg-black opacity-50 */
+  background: rgba(0, 0, 0, 0.6); /* Más oscuro para mejor contraste con el texto */
+  padding: 0; /* Ya no lleva padding aquí, lo tiene el texto directamente */
+  border-radius: 0; /* Ya no lleva borde radio el overlay de fondo */
+}
+
+#inicio h1 {
+  /* Tailwind: text-5xl md:text-7xl font-extrabold leading-tight tracking-wider mb-4 */
+  font-family: 'Playfair Display', serif; /* Si importas esta fuente, le dará un toque elegante */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Sombra para el texto del título */
+}
+
+#inicio p {
+  /* Tailwind: text-xl md:text-2xl font-light max-w-2xl mx-auto */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* Sombra para el texto del subtítulo */
+}
+
+
+/* SECCIÓN SOBRE NOSOTROS (Descripción) */
+#sobre-nosotros {
+  /* Tailwind: py-20 px-4 bg-gray-50 text-center */
+  background: url('img/fondoDescrip.jpg') no-repeat center center/cover; /* Mantenemos tu imagen de fondo */
+  background-attachment: fixed; /* Efecto parallax */
+  padding: 5rem 1rem; /* Más padding */
+  color: white; /* Texto blanco sobre el fondo oscuro */
+  position: relative;
+  z-index: 1; /* Para que el overlay funcione */
+}
+
+#sobre-nosotros::before { /* Nuevo overlay para esta sección */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Oscurecer más la imagen para que el texto blanco resalte */
+  border-radius: 0.75rem; /* Igual que otras secciones principales */
+  z-index: -1; /* Detrás del contenido */
+}
+
+#sobre-nosotros .max-w-4xl {
+  position: relative; /* Asegura que el contenido esté por encima del pseudo-elemento */
+  z-index: 2;
+}
+
+#sobre-nosotros h2 {
+  /* Tailwind: text-4xl font-bold text-gray-800 mb-8 */
+  color: white; /* Asegurar que el título sea blanco */
+  font-family: 'Playfair Display', serif; /* O una fuente elegante */
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+#sobre-nosotros p {
+  /* Tailwind: text-lg text-gray-700 leading-relaxed mb-6 */
+  color: #f0f0f0; /* Un blanco suave */
+  font-size: 1.15rem; /* Un poco más grande */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+#sobre-nosotros a {
+  color: #4CAF50; /* Un verde que contraste para el link de contacto */
+  text-decoration: underline;
+  font-weight: bold;
+}
+#sobre-nosotros a:hover {
+  color: #66BB6A;
+}
+
+
+/* Media Queries - Mejoras para Responsividad */
+
+/* Menú móvil (oculta el menú normal y muestra el de hamburguesa) */
+@media (max-width: 767px) { /* Breakpoint para móviles */
+  header.bg-white nav {
+      display: none; /* Oculta el nav normal en móvil */
+  }
+
   .menu-toggle {
-      display: block; /* Muestra el botón de hamburguesa en celulares */
+      display: block; /* Muestra el botón de hamburguesa */
+      margin-right: 1rem; /* Margen para que no esté pegado al borde */
   }
 
-  #menu {
-      display: none; /* Oculta el menú por defecto en celulares */
+  /* Estilos para el menú lateral que se abre */
+  #mobile-menu {
+      /* Tailwind: md:hidden fixed top-0 left-0 w-full h-full bg-white z-20 transform -translate-x-full transition-transform duration-300 ease-in-out */
+      display: flex; /* Asegura que el contenedor exista para la transición */
       flex-direction: column;
+      justify-content: flex-start; /* Alinea los ítems al inicio */
+      align-items: center; /* Centra los ítems horizontalmente */
+      padding-top: 4rem; /* Espacio para el botón de cerrar */
+  }
+
+  #mobile-menu ul {
       width: 100%;
-      background-color: white; /* Color de fondo para el menú móvil */
-      position: absolute;
-      top: 90px; /* Ajusta según la altura de tu encabezado */
-      left: 0;
-      z-index: 9; /* Asegura que el menú esté por encima de otros elementos, pero debajo del header */
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-
-  #menu.open {
-      display: flex; /* Muestra el menú cuando tiene la clase 'open' */
-  }
-
-  #menu li {
       text-align: center;
-      padding: 10px 0;
-      margin-left: 0;
+      margin-top: 2rem; /* Espacio entre el botón de cerrar y los links */
+  }
+
+  #mobile-menu li {
+      padding: 1rem 0;
+      width: 80%; /* Ancho de los elementos del menú */
       border-bottom: 1px solid #eee;
   }
 
-  #menu li:last-child {
+  #mobile-menu li:last-child {
       border-bottom: none;
   }
 
-  #menu a {
-       padding: 10px 1rem; /* Ajusta el padding para mejor área de clic */
+  #mobile-menu a {
+      display: block;
+      padding: 0.5rem 0;
+      font-size: 1.5rem; /* Más grande para fácil toque */
+      color: #333;
+      transition: color 0.3s ease;
   }
 
-   header.bg-white {
-      padding: 0.5rem 1rem; /* Ajusta el padding del header en móviles */
+  #mobile-menu a:hover {
+      color: #ea580c;
+  }
+  
+  /* Ajustes generales para móviles */
+  #inicio h1 {
+      font-size: 3rem; /* Título principal más pequeño en móvil */
+  }
+  #inicio p {
+      font-size: 1.25rem;
   }
 
-  header.bg-white .logo-img {
-       height: 50px; /* Ajusta el tamaño del logo en móviles */
+  #sobre-nosotros h2,
+  #productos h2,
+  #pedidos h2,
+  #contacto h2 {
+      font-size: 2.25rem; /* Títulos de sección más pequeños en móvil */
   }
 
-   header.bg-white .logo .text-xl {
-      font-size: 1rem; /* Ajusta el tamaño del texto del logo en móviles */
+  #sobre-nosotros p,
+  #contacto p {
+      font-size: 1rem;
+  }
+
+  .redes-sociales {
+      flex-direction: column; /* Apilar en columnas en móvil */
+      align-items: center;
+      gap: 1rem; /* Reducir espacio */
+  }
+
+  .red-link {
+      flex-direction: row; /* Mantener texto e icono en fila */
+      justify-content: center;
+  }
+
+  .mapa iframe {
+      height: 300px; /* Altura del mapa más pequeña en móvil */
   }
 }
-
-/* SECCIÓN SOBRE NOSOTROS */
-#sobre-nosotros {
-    background: url('img/fondoDescrip.jpg') no-repeat center center/cover;
-    padding: 50px 20px;
-    text-align: center;
-    color: white;
-  }
-  
-  #sobre-nosotros .info {
-    max-width: 800px;
-    margin: auto;
-    font-size: 1.4rem;
-    line-height: 1.8;
-  }
-    
-  .overlay {
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
-    padding: 50px 50px;
-    border-radius: 16px;
-    text-align: center;
-    max-width: 100vw;
-    box-sizing: border-box;
-  }
-  
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    #descripcion h1 {
-      font-size: 1.5rem;
-    }
-  
-    #descripcion p {
-      font-size: 1rem;
-    }
-  
-    .btn {
-      padding: 10px 16px;
-      font-size: 0.9rem;
-    }
-  }

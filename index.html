@@ -10,152 +10,193 @@
 <body>
   <div class="content-wrapper">
 
-    <!-- HEADER con logo a la izquierda -->
-    <header class="bg-white text-gray-800 py-4 flex justify-between items-center shadow-md sticky top-0 z-10 rounded-md">
-        <div class="logo flex items-center ml-4">
-          <!-- 🟠 Reemplazá "logo.png" con la imagen de tu logo local -->
-          <img src="img/logo.jpg" alt="Logo Appas" class="logo-img" />
-          <div class="text-xl font-bold ml-2">
-            <span class="text-blue-700">Ap</span><span class="logo-orange">p</span><span class="text-blue-700">as</span>
-            <span class="ml-1">Diseño y Fabricación de Amoblamientos</span>
+    <!-- HEADER -->
+    <header class="bg-white text-gray-800 py-4 flex justify-between items-center shadow-md sticky top-0 z-10 rounded-md px-4">
+      <div class="logo flex items-center">
+          <img src="img/logo.jpg" alt="Logo Appas" class="h-16 w-auto mr-2" /> <div class="text-3xl font-extrabold"> <span class="text-blue-700">Ap</span><span class="logo-orange">p</span><span class="text-blue-700">as</span>
           </div>
-        </div>
-        <nav>
-          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-          <ul id="menu">
-            <li><a href="#inicio" class="hover:text-orange-600 no-underline">Inicio</a></li>
-            <li><a href="#productos" class="hover:text-orange-600 no-underline">Productos</a></li>
-            <li><a href="#pedidos" class="hover:text-orange-600 no-underline">Pedidos</a></li>
-            <li><a href="#contacto" class="hover:text-orange-600 no-underline">Contacto</a></li>
-          </ul>
-        </nav>
-    </header>
-
-    <header id="inicio">
-      <div class="overlay">
-        <h1>Appas Amoblamientos</h1>
       </div>
-    </header>
+      <nav class="hidden md:block"> <ul id="menu" class="flex space-x-6">
+              <li><a href="#inicio" class="hover:text-orange-600 text-lg font-medium">Inicio</a></li>
+              <li><a href="#sobre-nosotros" class="hover:text-orange-600 text-lg font-medium">Nosotros</a></li>
+              <li><a href="#productos" class="hover:text-orange-600 text-lg font-medium">Productos</a></li>
+              <li><a href="#pedidos" class="hover:text-orange-600 text-lg font-medium">Pedidos</a></li>
+              <li><a href="#contacto" class="hover:text-orange-600 text-lg font-medium">Contacto</a></li>
+          </ul>
+      </nav>
+      <button class="menu-toggle md:hidden text-gray-800 focus:outline-none" onclick="toggleMenu()">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+  </header>
+  
+  <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-full bg-white z-20 transform -translate-x-full transition-transform duration-300 ease-in-out">
+      <div class="flex justify-end p-4">
+          <button class="text-gray-800 focus:outline-none" onclick="toggleMenu()">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+      </div>
+      <ul class="flex flex-col items-center space-y-6 text-xl">
+          <li><a href="#inicio" class="hover:text-orange-600" onclick="toggleMenu()">Inicio</a></li>
+          <li><a href="#sobre-nosotros" class="hover:text-orange-600" onclick="toggleMenu()">Nosotros</a></li>
+          <li><a href="#productos" class="hover:text-orange-600" onclick="toggleMenu()">Productos</a></li>
+          <li><a href="#pedidos" class="hover:text-orange-600" onclick="toggleMenu()">Pedidos</a></li>
+          <li><a href="#contacto" class="hover:text-orange-600" onclick="toggleMenu()">Contacto</a></li>
+      </ul>
+  </div>
+
+  <header id="inicio" class="relative h-screen bg-cover bg-center flex items-center justify-center text-white" style="background-image: url('img/fondo.jpg');">
+    <div class="absolute inset-0 bg-black opacity-50"></div> <div class="relative z-10 text-center px-4">
+        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-wider mb-4">
+            Appas Amoblamientos
+        </h1>
+        <p class="text-xl md:text-2xl font-light max-w-2xl mx-auto">
+            Diseño y Fabricación de Amoblamientos de Alta Calidad
+        </p>
+        <a href="#pedidos" class="mt-8 inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out">
+            Solicitá tu Presupuesto
+        </a>
+    </div>
+</header>
   
     <!-- SECCIÓN SOBRE NOSOTROS -->
-    <section id="sobre-nosotros">
-      <div class="overlay">
-      <div class="info">
-        <h1>Sobre Nosotros:</h1>
-        <h2>Trabajamos la madera con dedicación y pasión, dando forma a muebles y espacios que combinan innovación, diseño y calidez.</h2>
-        <h2>Con más de 60 años de trayectoria y dos generaciones de experiencia, realizamos trabajos a medida donde cada pieza refleja el resultado de escuchar a nuestros clientes y transformar sus ideas en creaciones únicas y duraderas.</h2>
-        <h2>Creamos muebles para tu hogar, empresa o cualquier necesidad específica. <strong>Contáctanos</strong> para más información o solicitar un presupuesto.</h2>
+    <section id="sobre-nosotros" class="py-20 px-4 bg-gray-50 text-center">
+      <div class="max-w-4xl mx-auto">
+          <h2 class="text-4xl font-bold text-gray-800 mb-8">Sobre Nosotros</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              En Appas Amoblamientos, trabajamos la madera con dedicación y pasión, dando forma a muebles y espacios que combinan innovación, diseño y calidez.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              Con más de 60 años de trayectoria y dos generaciones de experiencia, realizamos trabajos a medida donde cada pieza refleja el resultado de escuchar a nuestros clientes y transformar sus ideas en creaciones únicas y duraderas.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+              Creamos muebles para tu hogar, empresa o cualquier necesidad específica. <a href="#contacto" class="text-blue-700 hover:text-blue-800 font-semibold">Contáctanos</a> para más información o solicitar un presupuesto.
+          </p>
       </div>
-    </div>
-    </section>
+  </section>
   
 
     <!-- PRODUCTOS CON IMÁGENES DESCARGADAS -->
-    <section id="productos" class="py-20 px-4 text-center rounded-md">
-      <h2 class="text-3xl font-semibold mb-8 text-blue-700">Nuestros Productos</h2>
-      <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-        
-        <!-- 👉 Agregá tus imágenes dentro de la carpeta /img y usalas así: -->
-        <div class="producto">
-          <img src="img/imagen1.jpg" alt="mueble 1" style="width:100%; border-radius: 8px;" />
-          <h3>Mesada de cocina</h3>
-          <p> Mesada de pino compensado sin lustre</p>
-        </div>
-
-        <div class="producto">
-          <img src="img/imagen2.jpg" alt="Bahiut 1" style="width:100%; border-radius: 8px;" />
-          <h3>Mueble multiuso</h3>
-          <p>Mueble laminado para baño</p>
-        </div>
-
-        <div class="producto">
-          <img src="img/imagen3.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
-          <h3>Isla de cocina</h3>
-          <p>Isla laminada con tapa lustrada</p>
-        </div>
-
-        <div class="producto">
-            <img src="img/imagen4.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
-            <h3>Mesada de cocina</h3>
-            <p>Mesada en "L", laminada cemento</p>
+    <section id="productos" class="py-20 px-4 text-center bg-white rounded-md">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12">Nuestros Productos</h2>
+      <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div class="producto bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+              <img src="img/imagen1.jpg" alt="Mesada de cocina" class="w-full h-64 object-cover" />
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2">Mesada de cocina</h3>
+                  <p class="text-gray-600 text-sm">Mesada de pino compensado sin lustre</p>
+              </div>
           </div>
-
-          <div class="producto">
-            <img src="img/imagen5.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
-            <h3>Mueble combinado</h3>
-            <p>Tocador y espacio de guardado para dormitorio, laminado lino terra</p>
+          <div class="producto bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+              <img src="img/imagen2.jpg" alt="Bahiut 1" class="w-full h-64 object-cover" />
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2">Mueble multiuso</h3>
+                  <p class="text-gray-600 text-sm">Mueble laminado para baño</p>
+              </div>
           </div>
-
-          <div class="producto">
-            <img src="img/imagen6.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
-            <h3>Revestimiento de mesada de cocina</h3>
-            <p>Mesada de cocina en "L" sobre mampostería</p>
+          <div class="producto bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+              <img src="img/imagen3.jpg" alt="Mesa ratona" class="w-full h-64 object-cover" />
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2">Isla de cocina</h3>
+                  <p class="text-gray-600 text-sm">Isla laminada con tapa lustrada</p>
+              </div>
           </div>
-
-          <div class="producto">
-            <img src="img/imagen7.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
-            <h3>Isla de cocina</h3>
+          <div class="producto bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+              <img src="img/imagen4.jpg" alt="Mesa ratona" class="w-full h-64 object-cover" />
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2">Mesada de cocina</h3>
+                  <p class="text-gray-600 text-sm">Mesada en "L", laminada cemento</p>
+              </div>
           </div>
-
-          <div class="producto">
-            <img src="img/imagen8.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
-            <h3>Isla desayunero</h3>
+          <div class="producto bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+              <img src="img/imagen5.jpg" alt="Mesa ratona" class="w-full h-64 object-cover" />
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2">Mueble combinado</h3>
+                  <p class="text-gray-600 text-sm">Tocador y espacio de guardado para dormitorio, laminado lino terra</p>
+              </div>
           </div>
-
-          <div class="producto">
-            <img src="img/imagen9.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
-            <h3>Placard de embutir</h3>
+          <div class="producto bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+              <img src="img/imagen6.jpg" alt="Mesa ratona" class="w-full h-64 object-cover" />
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2">Revestimiento de mesada de cocina</h3>
+                  <p class="text-gray-600 text-sm">Mesada de cocina en "L" sobre mampostería</p>
+              </div>
           </div>
-
-          <div class="producto">
-            <img src="img/imagen10.jpg" alt="Mesa ratona" style="width:100%; border-radius: 8px;" />
-            <h3>Mesa para comedor</h3>
-            <p>Mesa lustrada para "8" personas </p>
+          <div class="producto bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+              <img src="img/imagen7.jpg" alt="Mesa ratona" class="w-full h-64 object-cover" />
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2">Isla de cocina</h3>
+                  <p class="text-gray-600 text-sm">Isla laminada con desayunador</p>
+              </div>
           </div>
-
-        <!-- 👉 Copiá este bloque y cambiá src + texto para más productos -->
-
+          <div class="producto bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+              <img src="img/imagen8.jpg" alt="Mesa ratona" class="w-full h-64 object-cover" />
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2">Isla desayunero</h3>
+                  <p class="text-gray-600 text-sm">Isla con estantes y barra desayunadora</p>
+              </div>
+          </div>
+          <div class="producto bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+              <img src="img/imagen9.jpg" alt="Mesa ratona" class="w-full h-64 object-cover" />
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2">Placard de embutir</h3>
+                  <p class="text-gray-600 text-sm">Placard a medida con puertas corredizas</p>
+              </div>
+          </div>
+          <div class="producto bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+              <img src="img/imagen10.jpg" alt="Mesa ratona" class="w-full h-64 object-cover" />
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2">Mesa para comedor</h3>
+                  <p class="text-gray-600 text-sm">Mesa lustrada para "8" personas</p>
+              </div>
+          </div>
       </div>
-    </section>
+  </section>
 
     <!-- FORMULARIO DE PEDIDO -->
-    <section id="pedidos">
-      <h2>Solicitar Pedido</h2>
-      <form id="formularioPedido">
-        <label for="tipoMadera">Tipo de Madera:</label>
-        <select id="tipoMadera" required>
-          <option value="Melamina">Melamina</option>
-          <option value="MaderaMaciza">Madera Maciza</option>
-          <option value="MaderaComprensada">Madera Compensada</option>
-          <option value="Otro">Otro</option>
-        </select>
-
-        <div id="otroTipoMaderaContainer" style="display: none;">
-          <label for="otroTipoMadera">Indique qué otro:</label>
-          <input type="text" id="otroTipoMadera" name="otroTipoMadera" placeholder="Ej: Roble" />
-        </div>
-
-          <label for="tipoSector">Sector donde va a ir ubicado:</label>
-          <select id="tipoSector" required>
-            <option value="Dormitorio">Dormitorio</option>
-            <option value="Cocina">Cocina</option>
-            <option value="Lavadero">Lavadero</option>
-            <option value="Baño">Baño</option>
-            <option value="Oficina">Oficina</option>
-            <option value="Comedor/Living">Comedor/Living</option>
-            <option value="Comercio">Comercio</option>
-            <option value="Otro">Otro</option>
-          </select>
-  
-          <div id="otroSectorContainer" style="display: none;">
-            <label for="otroSector">Indique qué otro:</label>
-            <input type="text" id="otroSector" name="otroSector" placeholder="Ej: Garage" />
+    <section id="pedidos" class="py-20 px-4 bg-gray-100 text-center">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12">Solicitá tu Presupuesto Personalizado</h2>
+      <form id="formularioPedido" class="max-w-xl mx-auto p-8 bg-white rounded-lg shadow-xl">
+          <div class="mb-6 text-left">
+              <label for="tipoMadera" class="block text-gray-700 text-lg font-medium mb-2">Tipo de Material:</label>
+              <select id="tipoMadera" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg">
+                  <option value="Melamina">Melamina</option>
+                  <option value="MaderaMaciza">Madera Maciza</option>
+                  <option value="MaderaComprensada">Madera Compensada</option>
+                  <option value="MDF/Enchapado">MDF / Enchapado</option>
+                  <option value="Otro">Otro (Especificar)</option>
+              </select>
           </div>
-
-        <button type="submit">Enviar a WhatsApp</button>
+  
+          <div id="otroTipoMaderaContainer" class="mb-6 text-left" style="display: none;">
+              <label for="otroTipoMadera" class="block text-gray-700 text-lg font-medium mb-2">Indique qué otro material:</label>
+              <input type="text" id="otroTipoMadera" name="otroTipoMadera" placeholder="Ej: Bambú, Haya" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg" />
+          </div>
+  
+          <div class="mb-6 text-left">
+              <label for="tipoSector" class="block text-gray-700 text-lg font-medium mb-2">Ubicación del Mueble:</label>
+              <select id="tipoSector" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg">
+                  <option value="Dormitorio">Dormitorio</option>
+                  <option value="Cocina">Cocina</option>
+                  <option value="Lavadero">Lavadero</option>
+                  <option value="Baño">Baño</option>
+                  <option value="Oficina">Oficina</option>
+                  <option value="Comedor/Living">Comedor / Living</option>
+                  <option value="Comercio">Comercio</option>
+                  <option value="Otro">Otro (Especificar)</option>
+              </select>
+          </div>
+  
+          <div id="otroSectorContainer" class="mb-6 text-left" style="display: none;">
+              <label for="otroSector" class="block text-gray-700 text-lg font-medium mb-2">Indique qué otro sector:</label>
+              <input type="text" id="otroSector" name="otroSector" placeholder="Ej: Garage, Jardín de Invierno" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg" />
+          </div>
+  
+          <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full text-xl transition duration-300 ease-in-out flex items-center justify-center">
+              <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg>
+              Enviar a WhatsApp
+          </button>
       </form>
-    </section>
+  </section>
 
     <!-- CONTACTO -->
     <section id="contacto" class="py-20 px-4 text-center rounded-md">
@@ -167,39 +208,60 @@
       <p class="text-lg text-gray-700">Direccion: Bv. Lehmann 2606, esquina J. Peterlin</p>
     </section>
 
-    <!-- Redes sociales -->
-    <div class="redes-sociales">
-    <!-- 🔵 Reemplazá "tu_usuario" con tu usuario real de Instagram -->
-    <a href="https://www.instagram.com/appas.amoblamientos" target="_blank" class="red-link">
-      <img src="img/instagram.png" alt="Instagram" class="icono-red" />
-      <span>@appas.amoblamientos</span> <!-- ⬅️ Acá también poné tu usuario de Instagram -->
-    </a>
+    <section id="contacto" class="py-20 px-4 text-center bg-white rounded-md">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12">Contactanos</h2>
+      <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+          ¡Contactanos y diseñemos juntos el mueble de tus sueños! Estamos listos para escuchar tus ideas y hacerlas realidad.
+      </p>
   
-    <!-- 🔵 Reemplazá "tu_pagina" con tu página de Facebook -->
-    <a href="https://www.facebook.com/AppasCarpinteria" target="_blank" class="red-link">
-      <img src="img/facebook.png" alt="Facebook" class="icono-red" />
-      <span>/AppasCarpinteria</span> <!-- ⬅️ Acá también poné tu página de Facebook -->
-    </a>
+      <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
+          <div class="flex items-center text-gray-700 text-lg">
+              <img src="img/gmail.webp" alt="Email" class="w-8 h-8 mr-3" /> <span>omarappas@hotmail.com</span>
+          </div>
+          <div class="flex items-center text-gray-700 text-lg">
+              <img src="img/telefono.png" alt="Teléfono" class="w-8 h-8 mr-3" /> <span>3492327644</span>
+          </div>
+          <div class="flex items-center text-gray-700 text-lg">
+              <img src="img/Localid.png" alt="Ubicación" class="w-8 h-8 mr-3" /> <span>Rafaela, Santa Fe - Argentina</span>
+          </div>
+      </div>
+      <p class="text-xl text-gray-700 mb-8">
+          Dirección: Bv. Lehmann 2606, esquina J. Peterlin
+      </p>
   
-    <!-- 🔵 Reemplazá "tu+carpinteria" con el nombre de tu negocio en Google -->
-    <a href="https://www.google.com/search?q=Appas Amoblamientos" target="_blank" class="red-link">
-      <img src="img/google.png" alt="Google" class="icono-red" />
-      <span>Appas Amoblamientos</span> <!-- ⬅️ Poné acá el nombre exacto como figura en Google -->
-    </a>
-  </div>
+      <div class="redes-sociales flex justify-center gap-6 md:gap-10 mb-12 flex-wrap">
+          <a href="https://www.instagram.com/appas.amoblamientos" target="_blank" class="red-link flex flex-col items-center group">
+              <img src="img/intagram.png" alt="Instagram" class="w-12 h-12 mb-2 transform group-hover:scale-110 transition-transform duration-300" />
+              <span class="text-lg text-gray-700 group-hover:text-blue-700 font-medium">@appas.amoblamientos</span>
+          </a>
+          <a href="https://www.facebook.com/AppasCarpinteria" target="_blank" class="red-link flex flex-col items-center group">
+              <img src="img/facebook.png" alt="Facebook" class="w-12 h-12 mb-2 transform group-hover:scale-110 transition-transform duration-300" />
+              <span class="text-lg text-gray-700 group-hover:text-blue-700 font-medium">/AppasCarpinteria</span>
+          </a>
+          <a href="https://www.google.com/search?q=Appas Amoblamientos" target="_blank" class="red-link flex flex-col items-center group">
+              <img src="img/google.png" alt="Google" class="w-12 h-12 mb-2 transform group-hover:scale-110 transition-transform duration-300" />
+              <span class="text-lg text-gray-700 group-hover:text-blue-700 font-medium">Appas Amoblamientos</span>
+          </a>
+      </div>
   
-  <!-- Google Maps -->
-  <div class="mapa">
-    <!-- 🔵 Reemplazá "Tu+Dirección" con la dirección de tu local (con "+" en lugar de espacios) -->
-    <a href="https://www.google.com/maps/place/Blvd.+G.+Lehmann+2606,+S2300+Rafaela,+Santa+Fe" target="_blank" class="link-mapa">
-      Ver ubicación en Google Maps <!-- ⬅️ Este texto lo podés cambiar también si querés -->
-    </a>
-  </div>
+      <div class="mapa w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">Encontranos en el mapa</h3>
+          <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.066042468305!2d-61.50352192410384!3d-31.24641159080088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95caae069a5e4b67%3A0xc3f17d74d232c3f!2sBv.%20Lehmann%202606%2C%20Rafaela%2C%20Santa%20Fe!5e0!3m2!1ses-419!2sar!4v1721590200000!5m2!1ses-419!2sar"
+              width="100%"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+      </div>
+  </section>
   
 
-    <footer>
-      <p>&copy; 2025 AppasAmoblamientos - Todos los derechos reservados</p>
-    </footer>
+  <footer class="text-center py-6 bg-gray-800 text-gray-300 text-sm mt-12 rounded-md">
+    <p>&copy; 2025 Appas Amoblamientos - Todos los derechos reservados.</p>
+  </footer>
 
   </div>
 
